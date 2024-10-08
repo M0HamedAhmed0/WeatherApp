@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-------------------- File Font Awesome  -------------------->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-------------------- File Bootstrap Css  -------------------->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-------------------- File Main  Css  -------------------->
+    <link rel="stylesheet" href="css/style.css">
+    <!-------------------- File Responsive Css  -------------------->
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Weather</title>
+</head>
+
+<body class="position-relative" data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+    <!----------------- Start Of Spinner  ----------------->
+    <div class="spinner w-100 position-absolute start-0 end-0 top-0 bottom-0 bg-dark z-3">
+        <span class="loader"></span>
+    </div>
+    <!----------------- End Of Spinner  ----------------->
+
+
+    <!----------------- Start Of Navbar Sections  ----------------->
+    <nav class="navbar navbar-expand-lg py-5" id="navbar-example">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#"><img src="images/logo.png" alt="">
+                <div class="logo ms-2 text-white">
+                    <h1 class="h6 m-0">Weather</h1>
+                    <small>tagline goes here</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#News">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#LiveCameras">Live Cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Photo">Photo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!----------------- End Of Navbar Sections  ----------------->
+
+
+    <!----------------- Start Of Header Sections  ----------------->
+
+    <header class="position-relative">
+        <div class="container">
+            <form class="position-relative">
+                <input type="text" placeholder="Find Your Location..." id="search" class="search">
+                <button type="submit" class="btn position-absolute" id="submit">Find</button>
+            </form>
+        </div>
+    </header>
+    <!----------------- End Of Header Sections  ----------------->
+
+
+
+    <!----------------- Start Of Forecast Sections  ----------------->
+
+    <section class="forecast position-relative w-100">
+        <div class="container">
+            <div class="row gap-3 gap-lg-0 rounded-3 overflow-hidden">
+                <div class="col-lg-4 bgToday" id="bgToday">
+                    <div class="header d-flex justify-content-between align-items-center">
+                        <span class="day text-dark" id="today"></span>
+                        <span class="date text-dark" id="todayDate"></span>
+                    </div>
+                    <div class="content">
+                        <div class="location fs-5 text-dark" id="locationCite"></div>
+                        <div class="temperature text-white fw-bold">
+                            <span class="current" id="tempToday"></span>
+                        </div>
+                        <div class="weather-icon mb-3">
+                            <img src="" id="todayIcon" class="w-25" alt="">
+                        </div>
+                        <div id="todayDescription" class="description text-color fs-6 my-3"></div>
+                        <span id="umbrella" class="me-3"><img src="" alt=""></span>
+                        <span id="wind" class="me-3"><img src="" alt=""></span>
+                        <span id="compass" class="me-3"><img src="" alt=""></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 bgTomorrow text-center">
+                    <div class="header">
+                        <span class="dayTomorrow text-dark"></span>
+                    </div>
+                    <div class="forecast-content">
+                        <div class="weather-icon mb-3">
+                            <img class="iconTomorrow" src="" alt="">
+                        </div>
+                        <div class="temperature d-flex flex-column ">
+                            <span class="maxTempTomorrow text-white fs-4 fw-bold "></span>
+                            <small class="minTempTomorrow fs-5"></small>
+                        </div>
+                        <div class="tomorrowDescription text-color fs-6 my-3"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 bgAfterTomorrow text-center">
+                    <div class="header">
+                        <span class="afterNextDay text-dark"></span>
+                    </div>
+                    <div class="forecast-content">
+                        <div class="weather-icon mb-3">
+                            <img class="iconAfterNextDay" src="" alt="">
+                        </div>
+                        <div class="temperature d-flex flex-column ">
+                            <span class=" maxTempAfterTomorrow current text-white fs-4 fw-bold"></span>
+                            <small class="minTempAfterTomorrow fs-5"></small>
+                        </div>
+                        <div class="description afterNextDayDescription text-color fs-6 my-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------------- End Of Forecast Sections  ----------------->
+
+    <!----------------- Start Of Footer Sections  ----------------->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form class="position-relative mb-4">
+                        <input type="text" placeholder="Enter your email to subscribe..." id="search" class="search">
+                        <button type="submit" class="btn position-absolute">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="social-links text-center">
+                        <a href="#"><i class="fa fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-brands fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p>Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+        </div>
+    </footer>
+    <!----------------- Start Of Footer Sections  ----------------->
+
+
+
+
+    <!----------------- File Bootstrap JS  ----------------->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!----------------- File Script JS  ----------------->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
